@@ -4,6 +4,12 @@ import { render } from "react-dom";
 import { Header } from "./components/header";
 import { Home } from "./components/home";
 class App extends React.Component{
+    
+    onGreet(){
+        alert('Hello');
+        console.log('Hello');
+    }
+    
     render(){
         
         //var hobby = ['coding', 'hacking', 'fucking', 'painting'];
@@ -16,7 +22,7 @@ class App extends React.Component{
                 </div> 
                 <div className = 'row'>
                     <div className = 'col-xs-10 col-xs-offset-1' >
-                       <Home name = {'Anubhav'} age = {18}>
+                       <Home name = {'Anubhav'} age = {18} greet = {this.onGreet}>
                        </Home>    
                     </div>
                 </div>            
