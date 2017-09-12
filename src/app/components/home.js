@@ -12,7 +12,7 @@ export class Home extends React.Component{
         this.setState({
             age: this.state.age + 2,
         })
-        console.log(this.age);
+        console.log(this.state.age);
     }
     render(){
         //console.log(this.props);
