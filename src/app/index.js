@@ -6,7 +6,7 @@ import { Home } from "./components/home";
 class App extends React.Component{
     render(){
         
-        var hobby = ['coding', 'hacking', 'fucking', 'painting'];
+        //var hobby = ['coding', 'hacking', 'fucking', 'painting'];
         return (
             <div className = 'container'>
                 <div className = 'row'>
@@ -16,8 +16,7 @@ class App extends React.Component{
                 </div> 
                 <div className = 'row'>
                     <div className = 'col-xs-10 col-xs-offset-1' >
-                       <Home name = {'Anubhav'} stream = {'CSE'} hobbies = {hobby}>
-                            <p>This is a paragraph!</p>
+                       <Home name = {'Anubhav'} age = {18}>
                        </Home>    
                     </div>
                 </div>            
