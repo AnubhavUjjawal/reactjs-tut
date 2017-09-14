@@ -20,7 +20,7 @@ class App extends React.Component{
         this.setState({
             nav_link: new_link,
         });
-        console.log(this.state.nav_link);
+        //console.log(this.state.nav_link);
     }
     
     render(){
@@ -36,7 +36,7 @@ class App extends React.Component{
                 </div> 
                 <div className = 'row'>
                     <div className = 'col-xs-10 col-xs-offset-1' >
-                       <Home name = {'Anubhav'} age = {18} greet = {this.onGreet} changeLink = {this.onChangeLink.bind(this)}>
+                       <Home name = {'Anubhav'} age = {18} greet = {this.onGreet} changeLink = {this.onChangeLink.bind(this)} linkName={this.state.nav_link}>
                        </Home>    
                     </div>
                 </div>            
