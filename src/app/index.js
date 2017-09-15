@@ -1,48 +1,29 @@
 import React from "react";
 import { render } from "react-dom";
+//import { Router, Route, browserHistory } from "react-router";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import { Root } from "./components/root";
 import { Header } from "./components/header";
 import { Home } from "./components/home";
-class App extends React.Component{
-    
-    constructor(){
-        super();
-        this.state = {
-            nav_link: 'Home',
-        };
-    }
-    onGreet(){
-        alert('Hello');
-        console.log('Hello');
-    }
+import { Hello } from "./components/hello";
+import { User } from "./components/user";
 
-    onChangeLink(new_link){
-        this.setState({
-            nav_link: new_link,
-        });
-        //console.log(this.state.nav_link);
-    }
-    
+class App extends React.Component{
     render(){
-        
-        //var hobby = ['coding', 'hacking', 'fucking', 'painting'];
-        return (
-            <div className = 'container'>
-                <div className = 'row'>
-                    <div className = 'col-xs-10 col-xs-offset-1' >
-                       <Header linkName = {this.state.nav_link}>
-                       </Header>    
-                    </div>
-                </div> 
-                <div className = 'row'>
-                    <div className = 'col-xs-10 col-xs-offset-1' >
-                       <Home name = {'Anubhav'} age = {18} greet = {this.onGreet} changeLink = {this.onChangeLink.bind(this)} linkName={this.state.nav_link}>
-                       </Home>    
-                    </div>
-                </div>            
-            </div>
+        return(
+            <BrowserRouter>
+            <div>
+                <Route  path = '/' component = {Header}/>
+                <Switch>
+                    <Route path='/user' component={User}/>
+                    <Route path='/hello' component={Hello}/>
+                    <Route path='/home' component={Home}/>
+                </Switch>   
+            </div>    
+            </BrowserRouter>
         )
-    }
+    };
 }
 
-render(<App/>, window.document.getElementById('app'))
+render(<App/>, window.document.getElementById('app'));
