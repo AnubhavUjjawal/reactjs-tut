@@ -16,7 +16,7 @@ class App extends React.Component{
             <div>
                 <Route  path = '/' component = {Header}/>
                 <Switch>
-                    <Route path='/user' component={User}/>
+                    <Route path={'/user/:id'} component={User}/>
                     <Route path='/hello' component={Hello}/>
                     <Route path='/home' component={Home}/>
                 </Switch>   
